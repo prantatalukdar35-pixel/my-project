@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drop Problem Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<!-- LOGIN SECTION -->
+<div class="container" id="loginSection">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username" required>
+    <input type="password" placeholder="Password" required>
+    <button onclick="showProblemForm()">Login</button>
+</div>
+
+<!-- PROBLEM SUBMISSION SECTION -->
+<div class="container" id="problemSection" style="display:none;">
+    <h2>Drop a Problem</h2>
+
+    <select required>
+        <option value="">Select Subject</option>
+        <option value="maths">Maths</option>
+        <option value="physics">Physics</option>
+        <option value="chemistry">Chemistry</option>
+    </select>
+
+    <textarea rows="5" placeholder="Write your problem here..." required></textarea>
+
+    <button>Submit Problem</button>
+</div>
+
+<script>
+    function showProblemForm() {
+        document.getElementById("loginSection").style.display = "none";
+        document.getElementById("problemSection").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
